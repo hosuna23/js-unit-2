@@ -3,7 +3,11 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+ let length = 0;
+ for (let i =0; i < numbers.length; i++){
+  length++;
+ }
+ return length;
 }
 
 /**
@@ -11,7 +15,11 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  for(let i =0; i < numbers.length; i++){
+    sum +=numbers[i];
+  }
+  return sum; 
 }
 
 /**
@@ -19,7 +27,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+ const sum = getSum(number);
+ const length = getLength(numbers);
+ return Math.round(sum / length);
 }
 
 /**
@@ -27,7 +37,13 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let min = 1000;
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+  }
+  return min;
 }
 
 /**
@@ -35,7 +51,13 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+ let max = -1000;
+ for (let i = 0; i < numbers.length; i++){
+  if (numbers[i] > max){
+    max = numbers[i];
+  }
+ }
+ return max;
 }
 
 /**
@@ -43,7 +65,14 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  let max = -Infinity;
+  let min = Infinity;
+  for (let i = 0; i < numbers.length; i++){
+    if(numbers[i] > max){
+      max = numbers[i];
+    }
+  }
+  return max - min;
 }
 
 /**
@@ -51,7 +80,7 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  return numbers.filter(number => number % 2 ===0);
 }
 
 /**
@@ -59,7 +88,7 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  return numbers.filter(number => number % 2 !==0);
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
